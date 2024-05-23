@@ -34,8 +34,10 @@
 	#define PAL_SDL_IncludeSyswmHeader 0//0,1
 #endif
 
-#ifndef PAL_LibraryUseSDL
+#ifndef PAL_Library2UseSDL
 	#define PAL_LibraryUseSDL 0//0,1
+#else
+	#define PAL_LibraryUseSDL 1
 #endif
 #ifndef PAL_SDL_HeaderPath
 	#define PAL_SDL_HeaderPath <SDL2/SDL.h>

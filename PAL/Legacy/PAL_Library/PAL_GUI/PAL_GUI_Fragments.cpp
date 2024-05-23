@@ -55,8 +55,9 @@ namespace PAL::Legacy::PAL_GUI
 	
 	#define PUI_EasyMain(naame,auuthor,args...) 				\
 		void _PUI_EasyMain(int argc,char **argv);				\
-		int SDL_main(int argc,char **argv)							\
+		int SDL_main(int argc,char **argv)						\
 		{														\
+			using namespace PAL::Legacy;						\
 			string name=naame,version,author=auuthor,title;		\
 			Posize winps=PUI_WINPS_DEFAULT;						\
 			int renderer=PUI_PreferredRenderer;					\
