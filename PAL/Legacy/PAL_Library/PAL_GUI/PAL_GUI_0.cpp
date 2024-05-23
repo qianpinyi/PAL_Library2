@@ -52,7 +52,7 @@
 #define PUIT(x) DeleteEndBlank(Charset::AnsiToUtf8(x))//PAL_GUI Text
 //#define PUIT(x) (x)
 
-namespace PAL_GUI
+namespace PAL::Legacy::PAL_GUI
 {
 	using namespace std;
 	using namespace PAL_DS;
