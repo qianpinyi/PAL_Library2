@@ -52,7 +52,7 @@
 #define PUIT(x) DeleteEndBlank(Charset::AnsiToUtf8(x))//PAL_GUI Text
 //#define PUIT(x) (x)
 
-namespace PAL::Legacy::PAL_GUI
+namespace PAL_GUI
 {
 	using namespace std;
 	using namespace PAL_DS;
@@ -2114,14 +2114,14 @@ namespace PAL::Legacy::PAL_GUI
 	PUI_Window *MainWindow=NULL,
 			   *CurrentWindow=NULL;
 			   
-	#define PUI_WINPS_DEFAULT Posize(PAL_GUI::PUI_Window::PUI_WINPS_CENTER,PAL_GUI::PUI_Window::PUI_WINPS_CENTER,1280,720)
-	#define PUI_WINPS_DEFAULT_S Posize(PAL_GUI::PUI_Window::PUI_WINPS_CENTER,PAL_GUI::PUI_Window::PUI_WINPS_CENTER,640,480)
-	#define PUI_WINPS_DEFAULT_M Posize(PAL_GUI::PUI_Window::PUI_WINPS_CENTER,PAL_GUI::PUI_Window::PUI_WINPS_CENTER,1280,720)
-	#define PUI_WINPS_DEFAULT_L Posize(PAL_GUI::PUI_Window::PUI_WINPS_CENTER,PAL_GUI::PUI_Window::PUI_WINPS_CENTER,1600,900)
-	#define PUI_WINPS_CENTER(w,h) Posize(PAL_GUI::PUI_Window::PUI_WINPS_CENTER,PAL_GUI::PUI_Window::PUI_WINPS_CENTER,w,h)
-	#define PUI_WINPS_UNDEFINE(w,h) Posize(PAL_GUI::PUI_Window::PUI_WINPS_UNDEFINE,PAL_GUI::PUI_Window::PUI_WINPS_UNDEFINE,w,h)
+	#define PUI_WINPS_DEFAULT Posize		(PAL::Legacy::PAL_GUI::PUI_Window::PUI_WINPS_CENTER,	PAL::Legacy::PAL_GUI::PUI_Window::PUI_WINPS_CENTER,1280,720)
+	#define PUI_WINPS_DEFAULT_S Posize		(PAL::Legacy::PAL_GUI::PUI_Window::PUI_WINPS_CENTER,	PAL::Legacy::PAL_GUI::PUI_Window::PUI_WINPS_CENTER,640,480)
+	#define PUI_WINPS_DEFAULT_M Posize		(PAL::Legacy::PAL_GUI::PUI_Window::PUI_WINPS_CENTER,	PAL::Legacy::PAL_GUI::PUI_Window::PUI_WINPS_CENTER,1280,720)
+	#define PUI_WINPS_DEFAULT_L Posize		(PAL::Legacy::PAL_GUI::PUI_Window::PUI_WINPS_CENTER,	PAL::Legacy::PAL_GUI::PUI_Window::PUI_WINPS_CENTER,1600,900)
+	#define PUI_WINPS_CENTER(w,h) Posize	(PAL::Legacy::PAL_GUI::PUI_Window::PUI_WINPS_CENTER,	PAL::Legacy::PAL_GUI::PUI_Window::PUI_WINPS_CENTER,w,h)
+	#define PUI_WINPS_UNDEFINE(w,h) Posize	(PAL::Legacy::PAL_GUI::PUI_Window::PUI_WINPS_UNDEFINE,	PAL::Legacy::PAL_GUI::PUI_Window::PUI_WINPS_UNDEFINE,w,h)
 //	#define PUI_WINPS_FULLSCREEN Posize()
-	#define PUI_FA_MAINWINDOW PAL_GUI::MainWindow->BackGroundLayer()
+	#define PUI_FA_MAINWINDOW PAL::Legacy::PAL_GUI::MainWindow->BackGroundLayer()
 	
 	inline SDL_Texture *CreateTextureFromSurface(SDL_Surface *sur)
 	{return CurrentWindow->CreateTextureFromSurface(sur);}
