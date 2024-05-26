@@ -10,41 +10,41 @@ namespace PAL
 		y=t;
 	}
 	
-	template <typename T1,typename T2,typename T3> inline bool InRange(const T1 &x,const T2 &L,const T3 &R)
+	template <typename T1,typename T2,typename T3> constexpr inline bool InRange(const T1 &x,const T2 &L,const T3 &R)
 	{return L<=x&&x<=R;}
 	
-	template <typename T1,typename T2,typename T3> inline T1 EnsureInRange(const T1 &x,const T2 &L,const T3 &R)
+	template <typename T1,typename T2,typename T3> constexpr inline T1 EnsureInRange(const T1 &x,const T2 &L,const T3 &R)
 	{
 		if (x<L) return L;
 		else if (x>R) return R;
 		else return x;
 	}
 	
-	template <typename T0> inline bool InThisSet(const T0 &x)//useless, just for completeness
+	template <typename T0> constexpr inline bool InThisSet(const T0 &x)//useless, just for completeness
 	{return false;}
 	
-	template <typename T0,typename T1> inline bool InThisSet(const T0 &x,const T1 &a)
+	template <typename T0,typename T1> constexpr inline bool InThisSet(const T0 &x,const T1 &a)
 	{return x==a;}
 	
-	template <typename T0,typename T1,typename...Ts> inline bool InThisSet(const T0 &x,const T1 &a,const Ts &...args)
+	template <typename T0,typename T1,typename...Ts> constexpr inline bool InThisSet(const T0 &x,const T1 &a,const Ts &...args)
 	{
 		if (x==a) return 1;
 		else return InThisSet(x,args...);
 	}
 	
-	template <typename T0> inline bool NotInSet(const T0 &x)
+	template <typename T0> constexpr inline bool NotInSet(const T0 &x)
 	{return true;}
 	
-	template <typename T0,typename T1> inline bool NotInSet(const T0 &x,const T1 &a)
+	template <typename T0,typename T1> constexpr inline bool NotInSet(const T0 &x,const T1 &a)
 	{return x!=a;}
 	
-	template <typename T0,typename T1,typename...Ts> inline bool NotInSet(const T0 &x,const T1 &a,const Ts &...args)
+	template <typename T0,typename T1,typename...Ts> constexpr inline bool NotInSet(const T0 &x,const T1 &a,const Ts &...args)
 	{
 		if (x==a) return 0;
 		else return NotInSet(x,args...);
 	}
 	
-	template <typename T> inline T max3(const T &x,const T &y,const T &z)
+	template <typename T> constexpr inline T max3(const T &x,const T &y,const T &z)
 	{
 		if (x<y)
 			if (y<z) return z;
@@ -54,7 +54,7 @@ namespace PAL
 			else return x;
 	}
 	
-	template <typename T> inline T min3(const T &x,const T &y,const T &z)
+	template <typename T> constexpr inline T min3(const T &x,const T &y,const T &z)
 	{
 		if (x<y)
 			if (x<z) return x;
@@ -64,25 +64,25 @@ namespace PAL
 			else return z;
 	}
 	
-	template <typename T> inline T maxN(const T &a)
+	template <typename T> constexpr inline T maxN(const T &a)
 	{return a;}
 	
-	template <typename T> inline T maxN(const T &a,const T &b)
+	template <typename T> constexpr inline T maxN(const T &a,const T &b)
 	{return a<b?b:a;}
 	
-	template <typename T,typename...Ts> inline T maxN(const T &a,const T &b,const Ts &...args)
+	template <typename T,typename...Ts> constexpr inline T maxN(const T &a,const T &b,const Ts &...args)
 	{
 		if (a<b) return (T)maxN(b,(T)args...);
 		else return (T)maxN(a,(T)args...);
 	}
 	
-	template <typename T> inline T minN(const T &a)
+	template <typename T> constexpr inline T minN(const T &a)
 	{return a;}
 	
-	template <typename T> inline T minN(const T &a,const T &b)
+	template <typename T> constexpr inline T minN(const T &a,const T &b)
 	{return b<a?b:a;}
 	
-	template <typename T,typename...Ts> inline T minN(const T &a,const T &b,const Ts &...args)
+	template <typename T,typename...Ts> constexpr inline T minN(const T &a,const T &b,const Ts &...args)
 	{
 		if (b<a) return (T)minN(b,(T)args...);
 		else return (T)minN(a,(T)args...);
